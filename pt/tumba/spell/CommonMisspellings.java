@@ -6,10 +6,10 @@ import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.InputStreamReader;
 import java.io.Reader;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Vector;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -139,7 +139,7 @@ public final class CommonMisspellings {
 		String value = pGoodTerm.trim().toLowerCase();
 		if(key.length()==0 || key.equals(value)) correctSpellings.put(value); else {
 			List aux = (List)(commonMisspellingIndex.get(key));
-			if(aux==null) aux = new Vector();
+			if(aux==null) aux = new ArrayList();
 			aux.add(value);
 			commonMisspellingIndex.put(pBadTerm,aux);
 		}

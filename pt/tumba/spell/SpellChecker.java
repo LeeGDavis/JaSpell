@@ -1,11 +1,11 @@
 package pt.tumba.spell;
 
-import java.io.File;
-import java.util.List;
-import java.util.Vector;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 /**
  *  The main class of the spell checking package.
@@ -297,7 +297,7 @@ public class SpellChecker {
 	 *@return  A <code>List</code> of similar words from the dictionary.
 	 */
 	public synchronized List findMostSimilarList(String key, boolean heuristics) {
-		List aux = new Vector();
+		List aux = new ArrayList();
 		int size = key.length();
 		if (size == 0) return aux;
 		if(commonErrors!=null) {

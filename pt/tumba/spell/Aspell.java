@@ -5,10 +5,10 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintStream;
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.StringTokenizer;
-import java.util.Vector;
 
 /**
  * This is a wrapper around the command aspell (version .33.7.1-alpha)
@@ -91,7 +91,7 @@ public final class Aspell {
 	 */
 	public List findMostSimilarList(String pTerm) {
 		String[] candidates = find(pTerm);
-		List aux = new Vector();
+		List aux = new ArrayList();
 		for(int i=0; i<candidates.length; i++) aux.add(candidates[i]);
 		return aux;
 	}

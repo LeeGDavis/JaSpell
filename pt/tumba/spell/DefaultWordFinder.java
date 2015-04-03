@@ -18,7 +18,7 @@ public class DefaultWordFinder {
 
 	/** A string with the current word for the word finder. */
 	protected String currentWord;
-	
+
 	/** A string with the word next to the current one. */
 	protected String nextWord;
 	
@@ -59,7 +59,7 @@ public class DefaultWordFinder {
 	 */
 	public String currentWordGram(int n) {
 		String segment = currentSegment();
-		StringBuffer wordGram = new StringBuffer(); 
+		StringBuffer wordGram = new StringBuffer();
 		if(segment==null) return null;
 		String s[] = splitWords(segment);
 		int j = 0;

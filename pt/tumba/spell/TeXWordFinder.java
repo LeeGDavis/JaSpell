@@ -2,8 +2,8 @@ package pt.tumba.spell;
 
 import java.util.Collection;
 import java.util.HashSet;
-import java.util.Set;
 import java.util.Iterator;
+import java.util.Set;
 
 /**
  * A word finder for TeX and LaTeX documents, which searches text for

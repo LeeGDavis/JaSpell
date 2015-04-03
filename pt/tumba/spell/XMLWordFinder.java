@@ -1,7 +1,7 @@
 package pt.tumba.spell;
 
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 /**
  * A word finder for XMLdocuments, which searches text for
@@ -96,7 +96,7 @@ public class XMLWordFinder extends DefaultWordFinder {
 	 * @return An array with the words extracted from the String.
 	 */
 	public static String[] splitWords ( String text ) {
-		List aux = new Vector();
+		List aux = new ArrayList();
 		XMLWordFinder finder = new XMLWordFinder(text);
 		String str;
 		while((str=finder.next())!=null) aux.add(str);
@@ -110,7 +110,7 @@ public class XMLWordFinder extends DefaultWordFinder {
 	 * @return An array with the text segments extracted from the String.
 	 */
 	public static String[] splitSegments ( String text ) {
-		List aux = new Vector();
+		List aux = new ArrayList();
 		XMLWordFinder finder = new XMLWordFinder(text);
 		String str;
 		while((str=finder.nextSegment())!=null) aux.add(str);

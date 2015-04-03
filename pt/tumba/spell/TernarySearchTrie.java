@@ -5,8 +5,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 import java.util.zip.GZIPInputStream;
 
 /**
@@ -504,7 +504,7 @@ public class TernarySearchTrie {
 			matchAlmostDiff,
 			key,
 			((numReturnValues < 0) ? -1 : numReturnValues),
-			new Vector(),
+			new ArrayList(),
 			false);
 	}
 
@@ -534,18 +534,18 @@ public class TernarySearchTrie {
 		int matchAlmostNumReturnValues,
 		List matchAlmostResult2,
 		boolean upTo) {
+		List matchAlmostResult = matchAlmostResult2;
 		if ((currentNode == null)
 			|| (matchAlmostNumReturnValues != -1
-				&& matchAlmostResult2.size() >= matchAlmostNumReturnValues)
+				&& matchAlmostResult.size() >= matchAlmostNumReturnValues)
 			|| (d < 0)
 			|| (charIndex >= matchAlmostKey.length())) {
-			return matchAlmostResult2;
+			return matchAlmostResult;
 		}
 		int charComp =
 			compareCharsAlphabetically(
 				matchAlmostKey.charAt(charIndex),
 				currentNode.splitchar);
-		List matchAlmostResult = matchAlmostResult2;
 		if ((d > 0) || (charComp < 0)) {
 			matchAlmostResult =
 				matchAlmostRecursion(
@@ -607,13 +607,13 @@ public class TernarySearchTrie {
 	 *@return                  A <code>List</code> with the results
 	 */
 	public List matchPrefix(String prefix, int numReturnValues) {
-		Vector sortKeysResult = new Vector();
+		List sortKeysResult = new ArrayList();
 		TSTNode startNode = getNode(prefix);
 		if (startNode == null) {
 			return sortKeysResult;
 		}
 		if (startNode.data != null) {
-			sortKeysResult.addElement(getKey(startNode));
+			sortKeysResult.add(getKey(startNode));
 		}
 		return sortKeysRecursion(
 			startNode.relatives[TSTNode.EQKID],
@@ -773,7 +773,7 @@ public class TernarySearchTrie {
 		return sortKeysRecursion(
 			startNode,
 			((numReturnValues < 0) ? -1 : numReturnValues),
-			new Vector());
+			new ArrayList());
 	}
 
 	/**
