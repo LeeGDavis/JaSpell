@@ -15,12 +15,12 @@ import java.util.List;
 public class SpellChecker {
 
 	/** The main dictionary for the spelling checker. */
-	private TernarySearchTrie dictionary = null;
+	protected TernarySearchTrie dictionary = null;
 	
 	/** A dictionary of common misspellings */
-	private CommonMisspellings commonErrors = null;
+	protected CommonMisspellings commonErrors = null;
 	
-	/** Use bigrams for context dependent spelling correction */ 
+	/** Use bigrams for context dependent spelling correction */
 	private boolean useBigrams = false;
 
 	/**
